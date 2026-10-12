@@ -41,7 +41,12 @@ override explicitly.
 `--effort` requires `--model`; neither option combines with `--terminal`. A
 connected worker server must advertise launch-preference support before Orca
 forwards either field. Compare `launch.requested` with `launch.effective`; never
-claim a model or effort from requested arguments alone.
+claim a model or effort from requested arguments alone. A launch receipt is not
+live-session status. For Codex, inspect `/status` in the exact worker terminal
+before claiming its active model or effort. When a fresh session is required,
+compare the new Session ID with the pre-launch ID and observe the first task
+activity separately. `/status` reports the CLI setting; it does not establish
+provider-side reasoning consumption.
 
 ## Reuse after settlement
 
